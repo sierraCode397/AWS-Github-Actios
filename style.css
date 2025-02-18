@@ -29,7 +29,11 @@ padding-right:100px;
 }
 
 .text-center {
-text-align:center;
+    text-align: center;
+    }
+
+.text-center1 {
+text-align: left;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -166,11 +170,56 @@ border: 1px solid #e1e1e1;
 /*=======================================
 FOOTER STYLES
 ==================================================*/
-
-
-#footer {
-background-color:#000;
-color:#fff;
-padding:20px 50px 20px 50px;
-text-align:right;
+.footer {
+    background: #151515;
+    padding: 16px;
+}
+.container1 {
+    max-width: 1200px;
+    margin: auto;
+}
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+.footer-logo img {
+    height: 50px;
+}
+.description {
+    color: gray;
+    margin-top: 10px;
+}
+.social-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+.icon {
+    width: 24px;
+    height: 24px;
+}
+.footer-section h3 {
+    text-transform: uppercase;
+    color: white;
+}
+.footer-section a, .footer-section span {
+    display: block;
+    color: gray;
+    text-decoration: none;
+    margin-top: 5px;
+}
+.footer-section a:hover {
+    text-decoration: underline;
+    color: lightblue;
+}
+.copyright {
+    text-align: center;
+    color: gray;
+    margin-top: 20px;
 }
