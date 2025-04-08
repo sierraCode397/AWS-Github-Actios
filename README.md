@@ -6,9 +6,15 @@
 
 1. Go to the **Amazon S3** service in the AWS Console and click on **Create bucket**.
 2. Complete the following:
-   - **Bucket name:** Choose a unique name (e.g., `mysite.com`).
-   - **AWS Region:** Select the one nearest to your location (e.g., `eu-west-2` for London).
+   - **Bucket name:** Choose a unique name.
+   - **AWS Region:** Select the one nearest to your location.
+
+![Descriptive Alt Text](./screenshots/Web/1.png)
+
    - **Block Public Access:** Uncheck **Block all public access** and acknowledge the warning.
+
+![Descriptive Alt Text](./screenshots/Web/2.png)
+
 3. Click **Create bucket** to proceed.
 
 ---
@@ -24,6 +30,9 @@ After creating the bucket:
    - **Hosting type:** Select **Host a static website**.
    - **Index document:** Enter `index.html`.
    - **Error document:** (Optional) Leave it empty or set one if needed.
+
+![Descriptive Alt Text](./screenshots/Web/3.png)
+
 4. Click **Save changes**.
 
 ---
@@ -50,6 +59,8 @@ Policies in AWS are used to define access permissions for resources. To make you
     }
     ```
 
+![Descriptive Alt Text](./screenshots/Web/4.png)
+
 4. Click **Save changes** to apply the policy.
 
 ### 4. Upload Your Website Files
@@ -58,6 +69,9 @@ You're now ready to upload your website content:
 
 1. Open your bucket and click **Upload**.
 2. Drag and drop your `index.html` file into the upload area, or click **Add files** and select the file manually.
+
+![Descriptive Alt Text](./screenshots/Web/5.png)
+
 3. Click **Upload** to complete the process.
 
 ---
@@ -68,7 +82,7 @@ To verify the setup:
 
 1. Go to the **Properties** tab of your bucket.
 2. Scroll down to **Static website hosting**.
-3. Copy your website **Endpoint URL** (e.g., `http://isaac-website-epam.s3-website-us-east-1.amazonaws.com`).
+3. Copy your website **Endpoint URL** (`http://isaac-website-epam.s3-website-us-east-1.amazonaws.com`).
 4. Paste the URL into your browser.
 
 Your website should now be live!
@@ -90,7 +104,7 @@ Generate a new IAM user dedicated to managing access to your S3 bucket.
 - Create a new user with a unique name.
 - Ensure that the access type is set to provide programmatic access.
 
-![Descriptive Alt Text](./screenshots/Setp1.png)
+![Descriptive Alt Text](./screenshots/Auto/Setp1.png)
 
 ---
 
@@ -103,7 +117,7 @@ Grant the user permission to manage and interact fully with your S3 bucket.
 - From the policy list, choose the policy that grants full access to S3 (commonly named similar to `AmazonS3FullAccess`).
 - Confirm and complete the creation process.
 
-![Descriptive Alt Text](./screenshots/Step2.png)
+![Descriptive Alt Text](./screenshots/Auto/Step2.png)
 
 ---
 
@@ -114,7 +128,7 @@ Retrieve and safely store the access credentials for later use.
 **Instructions:**
 - After the user is created, download the access credentials (Access Key ID and Secret Access Key).
 
-![Descriptive Alt Text](./screenshots/Step3.png)
+![Descriptive Alt Text](./screenshots/Auto/Step3.png)
 
 ---
 
@@ -130,7 +144,7 @@ Securely incorporate your AWS credentials into your GitHub project so that your 
 - Click on **New repository secret** and add a new secret for your Access Key ID (`AWS_ACCESS_KEY_ID`).
 - Repeat the process to add a secret for your Secret Access Key (`AWS_SECRET_ACCESS_KEY`).
 
-![Descriptive Alt Text](./screenshots/Step4.png)
+![Descriptive Alt Text](./screenshots/Auto/Step4.png)
 
 ---
 
@@ -155,7 +169,7 @@ Next, we create a workflow for the deployment.
 - Click on **Set up workflow yourself**.
 - Insert the following script into your workspace:
 
-![Descriptive Alt Text](./screenshots/Step5.png)
+![Descriptive Alt Text](./screenshots/Auto/Step5.png)
 
 ---
 
@@ -169,11 +183,9 @@ Next, we create a workflow for the deployment.
 - **Bucket Specification:** Confirm that you have the correct bucket name.
 - **Secrets Reference:** Verify that your workflow references the exact names of your secrets.
 
-![Descriptive Alt Text](./screenshots/Step6.png)
+![Descriptive Alt Text](./screenshots/Auto/Step6.png)
 
 ---
-
-## Finished
 
 ## Finished
 
@@ -183,4 +195,4 @@ Once you've completed the setup, navigate to your S3 bucket and locate the websi
 
 (`http://isaac-website-epam.s3-website-us-east-1.amazonaws.com`)
 
-![Descriptive Alt Text](./screenshots/Step7.png)
+![Descriptive Alt Text](./screenshots/Auto/Step7.png)
