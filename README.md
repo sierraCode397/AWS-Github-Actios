@@ -56,3 +56,27 @@ Ensure that sensitive credentials are never exposed.
 - Always use GitHub Secrets to manage sensitive data.
 - Make sure your CI/CD pipeline references these secrets, so your keys remain hidden and secure throughout the deployment process.
 - Regularly review and rotate credentials to maintain security.
+
+---
+
+## Step 3: Create a Workflow
+
+Next, we create a workflow for the deployment.
+
+**Instructions:**
+
+- Navigate to your repository containing the app you wish to deploy and select the **Actions** tab.
+- Click on **Set up workflow yourself**.
+- Insert the following script into your workspace:
+
+---
+
+## Step 4: Run your Pipeline
+
+**Instructions:**
+- Navigate to the **Actions** tab in your repository to see your pipeline in action.
+
+**Troubleshooting:**
+- **User Permissions:** Ensure your IAM user's policy is correctly set.
+- **Bucket Specification:** Confirm that you have the correct bucket name.
+- **Secrets Reference:** Verify that your workflow references the exact names of your secrets.
