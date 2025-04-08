@@ -1,4 +1,4 @@
-# AWS Practical Task
+# Automation: How to Deploy your Static Website to S3 Using GitHub Actions
 
 ## Step 1: Set Up a Dedicated User for S3 Access
 
@@ -12,6 +12,8 @@ Generate a new IAM user dedicated to managing access to your S3 bucket.
 - Create a new user with a unique name.
 - Ensure that the access type is set to provide programmatic access.
 
+![Descriptive Alt Text](./screenshots/Setp1.png)
+
 ---
 
 ### 1.2 Attach the Required Policy
@@ -23,6 +25,8 @@ Grant the user permission to manage and interact fully with your S3 bucket.
 - From the policy list, choose the policy that grants full access to S3 (commonly named similar to `AmazonS3FullAccess`).
 - Confirm and complete the creation process.
 
+![Descriptive Alt Text](./screenshots/Step2.png)
+
 ---
 
 ### 1.3 Secure Your Credentials
@@ -31,6 +35,8 @@ Retrieve and safely store the access credentials for later use.
 
 **Instructions:**
 - After the user is created, download the access credentials (Access Key ID and Secret Access Key).
+
+![Descriptive Alt Text](./screenshots/Step3.png)
 
 ---
 
@@ -45,6 +51,8 @@ Securely incorporate your AWS credentials into your GitHub project so that your 
 - Navigate to **Secrets** and select **Actions**.
 - Click on **New repository secret** and add a new secret for your Access Key ID (`AWS_ACCESS_KEY_ID`).
 - Repeat the process to add a secret for your Secret Access Key (`AWS_SECRET_ACCESS_KEY`).
+
+![Descriptive Alt Text](./screenshots/Step4.png)
 
 ---
 
@@ -69,6 +77,8 @@ Next, we create a workflow for the deployment.
 - Click on **Set up workflow yourself**.
 - Insert the following script into your workspace:
 
+![Descriptive Alt Text](./screenshots/Step5.png)
+
 ---
 
 ## Step 4: Run your Pipeline
@@ -80,3 +90,5 @@ Next, we create a workflow for the deployment.
 - **User Permissions:** Ensure your IAM user's policy is correctly set.
 - **Bucket Specification:** Confirm that you have the correct bucket name.
 - **Secrets Reference:** Verify that your workflow references the exact names of your secrets.
+
+![Descriptive Alt Text](./screenshots/Step6.png)
