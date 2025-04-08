@@ -1,3 +1,81 @@
+# Launch a Simple Website on Amazon S3
+
+## 1. Setup Amazon S3
+
+### Create a New Bucket
+
+1. Go to the **Amazon S3** service in the AWS Console and click on **Create bucket**.
+2. Complete the following:
+   - **Bucket name:** Choose a unique name (e.g., `mysite.com`).
+   - **AWS Region:** Select the one nearest to your location (e.g., `eu-west-2` for London).
+   - **Block Public Access:** Uncheck **Block all public access** and acknowledge the warning.
+3. Click **Create bucket** to proceed.
+
+---
+
+## 2. Enable Static Website Hosting
+
+After creating the bucket:
+
+1. Open your new bucket and go to the **Properties** tab.
+2. Scroll down to **Static website hosting** and click **Edit**.
+3. Configure the settings:
+   - **Enable** static website hosting.
+   - **Hosting type:** Select **Host a static website**.
+   - **Index document:** Enter `index.html`.
+   - **Error document:** (Optional) Leave it empty or set one if needed.
+4. Click **Save changes**.
+
+---
+
+## 3. Set Up Bucket Policy
+
+Policies in AWS are used to define access permissions for resources. To make your site public:
+
+1. Go back to the **Permissions** tab in your bucket.
+2. Under **Bucket Policy**, click **Edit**.
+3. Paste the following policy code into the editor (replace `YOUR_BUCKET_NAME` with your actual bucket name):
+
+    ```json
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Effect": "Allow",
+                "Principal": "*",
+                "Action": "s3:GetObject",
+                "Resource": "arn:aws:s3:::YOUR_BUCKET_NAME/*"
+            }
+        ]
+    }
+    ```
+
+4. Click **Save changes** to apply the policy.
+
+### 4. Upload Your Website Files
+
+You're now ready to upload your website content:
+
+1. Open your bucket and click **Upload**.
+2. Drag and drop your `index.html` file into the upload area, or click **Add files** and select the file manually.
+3. Click **Upload** to complete the process.
+
+---
+
+### 5. Test Your Website
+
+To verify the setup:
+
+1. Go to the **Properties** tab of your bucket.
+2. Scroll down to **Static website hosting**.
+3. Copy your website **Endpoint URL** (e.g., `http://isaac-website-epam.s3-website-us-east-1.amazonaws.com`).
+4. Paste the URL into your browser.
+
+Your website should now be live!
+
+🎉 **Congrats!** You've successfully launched a static website using **Amazon S3**.
+
+
 # Automation: How to Deploy your Static Website to S3 Using GitHub Actions
 
 ## Step 1: Set Up a Dedicated User for S3 Access
@@ -92,3 +170,17 @@ Next, we create a workflow for the deployment.
 - **Secrets Reference:** Verify that your workflow references the exact names of your secrets.
 
 ![Descriptive Alt Text](./screenshots/Step6.png)
+
+---
+
+## Finished
+
+## Finished
+
+Once you've completed the setup, navigate to your S3 bucket and locate the website endpoint. It should resemble something like this:
+
+**Example Endpoint:**
+
+(`http://isaac-website-epam.s3-website-us-east-1.amazonaws.com`)
+
+![Descriptive Alt Text](./screenshots/Step7.png)
